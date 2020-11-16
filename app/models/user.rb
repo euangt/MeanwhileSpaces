@@ -73,10 +73,6 @@ end
 #   # missing validations on floor_space, longitude, latitude, description
 # end
 
-#Routes
-
-##resources :spaces, only: [:index, :show, :new, :create]
-
 # class CreateSpaces < ActiveRecord::Migration[6.0]
 #   def change
 #     create_table :spaces do |t|
@@ -118,3 +114,7 @@ end
 # end
 
 # rails g model Space title floor_space:integer price_per_day:integer description:text address:text longitude:integer latitude:integer internet:boolean availability_status:boolean heating:boolean lighting:boolean user:references
+
+# rails g controller Spaces
+
+##resources :spaces, only: [:index, :show, :new, :create]
