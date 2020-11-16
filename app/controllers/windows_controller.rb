@@ -1,11 +1,12 @@
 class WindowsController < ApplicationController
 
+  before_action :find_window, only: [:show, :update, :edit, :destroy]
+
   def index 
     @windows = Window.all 
   end
 
   def show 
-    @window = Window.find(params[:id])
   end 
 
   def new 
@@ -21,7 +22,23 @@ class WindowsController < ApplicationController
     end
   end 
 
+  def edit 
+  end
+
+  def update 
+    @window.update(window_params)
+    redirect_to window_path(@window)
+  end 
+
+  def 
+    @window.destroy 
+  end
+
   private 
+  
+  def find_window 
+    @window = Window.find(params[:id])
+  end
 
   def window_params 
     #ToDo, identify params to be passed into the window_params
