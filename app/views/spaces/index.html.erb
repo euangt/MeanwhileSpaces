@@ -1,0 +1,15 @@
+<h1>All of the spaces near you</h1>
+
+
+<div class="container">
+  <div class="row">
+    <% @spaces.each do |space| %>
+    <div class="col">
+    <p>Name: <%= space.title %></p>
+    <p>Address: <%= space.address %>
+    <p>For rent: <%= space.availability %>
+    <p>Price: <%= space.price_per_day %>
+    </div>
+  </div>
+</div>
+
