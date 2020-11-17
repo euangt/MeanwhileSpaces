@@ -3,7 +3,7 @@ class Space < ApplicationRecord
   validates :title, presence: true
 
   validates :price_per_day, presence: true
-  validates :address, presence: true, 
-  validates :availability_status, presence: true,
+  validates :address, presence: true
+  #validates :availability_status, presence: true, -- Can't use presence true 
   # missing validations on floor_space, longitude, latitude, description
 end
