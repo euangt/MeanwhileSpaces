@@ -1,0 +1,18 @@
+<div class="container">
+<h1>Edit a Space</h1>
+<%= simple_form_for @space do |f| %>
+   <div class="form-inputs"> 
+    <%= f.input :title %>
+    <%= f.input :address %>
+    <%= f.input :price_per_day %>
+    <%= f.input :description %>
+    <%= f.input :heating, inline_label: 'Heating' %>
+    <%= f.input :internet, inline_label: 'Internet' %>
+    <%= f.input :lighting, inline_label: 'Lighting' %>
+    <%= f.input :availability_status, inline_label: 'Is this available?' %>
+   </div>
+  <div class="form-actions"> 
+    <%= f.button :submit, class: "btn btn-primary"%>
+   </div>
+<% end %>
+</div>
