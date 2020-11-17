@@ -142,7 +142,7 @@ space3 = Space.create!(
 )
 
 space4 = Space.create!(
-  title: 'CENTRAL Neukölln quiet cafe window',
+  title: 'CENTRAL Neukölln quiet pizzeria window',
   floor_space: 15,
   price_per_day: 5,
   description: "Extra small room of a Pizzeria with a large window facing the street, no direct access form the room to the street but with full-heigh window. Perfect for small exhibits",
@@ -158,9 +158,9 @@ space4 = Space.create!(
 
 space5 = Space.create!(
   title: 'Charming city spot',
-  floor_space: 36,
+  floor_space: 150,
   price_per_day: 44,
-  description: "",
+  description: "The space is located in the Rural suburb of Berlin. Adjacent to a kindergarden, equipped with a small but working kitchen and large open space to fit about 50 people. ",
   address: "Leopoldstraße 48 Berlin Britz",
   longitude: nil,
   latitude: nil,
@@ -172,10 +172,10 @@ space5 = Space.create!(
 )
 
 space6 = Space.create!(
-  title: 'Gallery in Prenzlauer Berg',
+  title: 'Former retail space in Wittenau',
   floor_space: 109,
   price_per_day: 43,
-  description: "",
+  description: "The space is located in a prime location in the quiet neighbourhood of Wittenau. The apartment is equipped with a large double bed. The space has no electricty, and no kitchen -  it has got a fridge, a kettle and a bathroom with shower",
   address: "Waßmannsdorfer Chaussee 75 Berlin Wittenau",
   longitude: nil,
   latitude: nil,
@@ -190,7 +190,7 @@ space7 = Space.create!(
   title: 'Whole Store Space in Berlin Center',
   floor_space: 46,
   price_per_day: 39,
-  description: "",
+  description: "On the groundfloor corner of a historical building, the space is unique with it's wooden walls and retro style store front. Equipped with a small office in the back. Available for rent through the whole winter.",
   address: "Leopoldstraße 83 Berlin Friedrichshagen",
   longitude: nil,
   latitude: nil,
@@ -202,11 +202,11 @@ space7 = Space.create!(
 )
 
 space8 = Space.create!(
-  title: 'Rustic retail space next to the U-bahn station',
+  title: 'Rustic former retail space next to the U-bahn station',
   floor_space: 75,
   price_per_day: 9,
-  description: "",
-  address: "Genslerstraße 42 Berlin Spandau",
+  description: "Empty retails space open for short-term pop-up/exhibitions. Cozy neighbourhood with galleries and cafes near by. Equipped with a small kitchen in the back.",
+  address: "Genslerstraße 42 Berlin Prenzlauer Berg",
   longitude: nil,
   latitude: nil,
   internet: false,
@@ -217,10 +217,10 @@ space8 = Space.create!(
 )
 
 space9 = Space.create!(
-  title: 'Large Warehouse space in Kreuzberg',
-  floor_space: 99,
+  title: 'Gritty industrial site in Friedrichshain',
+  floor_space: 200,
   price_per_day: 11,
-  description: "",
+  description: "Privately owned warehouse space waiting for large scale renovation in 2022. Perfect for parties and largescale installations.",
   address: "Leopoldstraße 87 Berlin Friedrichshain",
   longitude: nil,
   latitude: nil,
@@ -235,7 +235,7 @@ space10 = Space.create!(
   title: 'Large store window of my pharmacy',
   floor_space: 65,
   price_per_day: 42,
-  description: "",
+  description: "The store front window facing the shopping street has a antique feel. Perfect for anyone wanting to showcase their craft. Installation can only be done during open hours. ",
   address: "Genslerstraße 47 Berlin Spandau",
   longitude: nil,
   latitude: nil,
@@ -262,10 +262,10 @@ space11 = Space.create!(
 )
 
 space12 = Space.create!(
-  title: '',
+  title: "Luiminous pop-up space with Kitchen",
   floor_space: 2,
   price_per_day: 10,
-  description: "",
+  description: "Bright space equipped with large kitchen for professional chefs. Available until the demolishing of the building",
   address: "Genslerstraße 18 Berlin Tiergarten",
   longitude: nil,
   latitude: nil,
@@ -277,10 +277,10 @@ space12 = Space.create!(
 )
 
 space13 = Space.create!(
-  title: '',
+  title: 'Inviting storefront in charming Prenzlauer Berg',
   floor_space: 4,
   price_per_day: 13,
-  description: "",
+  description: "Well situated storefront, suitable for retail, art exhibition etc.",
   address: "Genslerstraße 10 Berlin Tegel",
   longitude: nil,
   latitude: nil,
@@ -292,10 +292,10 @@ space13 = Space.create!(
 )
 
 space14 = Space.create!(
-  title: '',
+  title: 'Large space in former industrial site',
   floor_space: 6,
   price_per_day: 29,
-  description: "",
+  description: "Gritty, spacious space in trendy Neukölln. Perfect for events, parties, or exhibitions",
   address: "Genslerstraße 84 Berlin Wannsee",
   longitude: nil,
   latitude: nil,
@@ -307,11 +307,11 @@ space14 = Space.create!(
 )
 
 space15 = Space.create!(
-  title: '',
+  title: 'Small shop on busy street in Mitte',
   floor_space: 10,
   price_per_day: 40,
-  description: "",
-  address: "Landhausstraße 97 Schwedt, Brandenburg",
+  description: "Currently inbetween tenants, this store is suitable for pop-ups ",
+  address: "Landhausstraße 97 Schwedt, Mitte",
   longitude: nil,
   latitude: nil,
   internet: true,
@@ -322,10 +322,10 @@ space15 = Space.create!(
 )
 
 space16 = Space.create!(
-  title: '',
+  title: 'Charming space in Potsdam',
   floor_space: 12,
   price_per_day: 17,
-  description: "",
+  description: "Previously a bakery, this space has plenty of character ",
   address: "Fugger Strasse 80 Potsdam, Brandenburg",
   longitude: nil,
   latitude: nil,
@@ -337,10 +337,10 @@ space16 = Space.create!(
 )
 
 space17 = Space.create!(
-  title: '',
+  title: 'Great retail outdoor space in Brandenburg courtyard',
   floor_space: 40,
   price_per_day: 46,
-  description: "",
+  description: "Fromer retail space in quiet courtyard, with ample outdoor space available for events/pop-ups",
   address: "Landhausstraße 46 Woltersdorf, Brandenburg",
   longitude: nil,
   latitude: nil,
@@ -352,11 +352,11 @@ space17 = Space.create!(
 )
 
 space18 = Space.create!(
-  title: '',
+  title: 'Modern storefront in vibrant Mitte',
   floor_space: 47,
   price_per_day: ,
-  description: "Hoheluftchaussee 23 Herzberg, Brandenburg",
-  address: "",
+  description: "Skalitzer Str. 64 Kreuzberg, Berlin",
+  address: "Located in upscale part of town, the space is perfect for retail pop-ups",
   longitude: nil,
   latitude: nil,
   internet: true,
@@ -367,11 +367,11 @@ space18 = Space.create!(
 )
 
 space19 = Space.create!(
-  title: '',
+  title: 'Inviting storefront in charming Prenzlauer Berg',
   floor_space: 32,
   price_per_day: 24,
-  description: "Amsinckstrasse 61 Ortrand, Brandenburg",
-  address: "",
+  description: "Well situated storefront, suitable for retail, art exhibition etc.",
+  address: "Eberswalder Str. 45 Prenzlauer Berg Berlin",
   longitude: nil,
   latitude: nil,
   internet: true,
@@ -385,8 +385,23 @@ space20 = Space.create!(
   title: '1920s store front in vibrant neighbourhood',
   floor_space: 24,
   price_per_day: 27,
-  description: "",
+  description: "Beautiful bookstore offing half of it's space to any",
   address: "Skalitzer Str. 45 Kreuzberg, Berlin",
+  longitude: nil,
+  latitude: nil,
+  internet: true,
+  availability_status: true,
+  heating: true,
+  lighting: false,
+  user: user8
+)
+
+space20 = Space.create!(
+  title: 'Gritty formal industrial site in Lichtenberg',
+  floor_space: 24,
+  price_per_day: 27,
+  description: "Large site perfect for events in trendy Lichtenburg neighborhood",
+  address: "Landsberger Allee 277, Lichtenberg Berlin",
   longitude: nil,
   latitude: nil,
   internet: true,
