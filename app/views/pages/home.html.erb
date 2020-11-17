@@ -1,4 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div>
+  <%= render 'shared/navbar' %>
+</div>
+<br><br>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h1>Pages#home</h1>
+      <p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to 'Log-in', new_user_session_path %>
+      <%= link_to 'Log-in', new_user_session_path, class: "btn btn-primary" %>
+      <%= link_to 'Go see spaces', spaces_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
