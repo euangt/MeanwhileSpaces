@@ -1,0 +1,22 @@
+<h1><%= @space.title %>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p>Name: <%= @space.title %></p>
+      <p>About: <%= @space.description %></p>
+      <p>Address: <%= @space.address %>
+      <p>For rent: <%= @space.availability %>
+      <p>Price: <%= @space.price_per_day %>
+    </div>
+    <div class="col">
+      <p>Floor space: <%= @space.floor_space %></p>
+      <p>Internet: <%= @space.internet %></p>
+      <p>Heating: <%= @space.heating %></p>
+      <p>Lighting: <%= @space.lighting %></p>
+    </div>
+  </div>
+  <div>
+    <h2>Map goes here</h2>
+  </div>
+</div>

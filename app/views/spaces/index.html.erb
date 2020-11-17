@@ -2,10 +2,10 @@
 
 
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center">
     <% @spaces.each do |space| %>
-    <div class="col">
-    <p>Name: <%= space.title %></p>
+    <div class="col-4">
+    <p>Name: <%= link_to space.title, space_path(space) %></p>
     <p>Address: <%= space.address %>
     <p>For rent: <%= space.availability %>
     <p>Price: <%= space.price_per_day %>
@@ -13,4 +13,4 @@
   </div>
 </div>
 
-<%= link_to "Add a new space", new_space %>
+<%= link_to "Add a new space", new_space_path %>
