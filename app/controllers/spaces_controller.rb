@@ -31,8 +31,9 @@ class SpacesController < ApplicationController
         redirect_to space_path(@space)
       end 
     
-      def 
+      def destroy
         @space.destroy 
+        redirect_to spaces_path
       end
     
       private 
@@ -42,6 +43,6 @@ class SpacesController < ApplicationController
       end
     
       def space_params 
-        params.require(:space).permit(:title, :address, :price_per_day, :heating, :internet, :lighting, :floor_space)
+        params.require(:space).permit(:space_id, :title, :address, :price_per_day, :heating, :internet, :lighting, :floor_space)
       end
 end
