@@ -1,0 +1,19 @@
+<h1>All of the spaces near you</h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <% @spaces.each do |space| %>
+    <div class="col-8">
+    <p>Name: <%= link_to space.title, space_path(space) %></p>
+    <p>Address: <%= space.address %>
+    <p>For rent: <%= space.availability %>
+    <p>Price: <%= space.price_per_day %>
+    </div>
+    <<% end %>>
+  </div>
+  <div class="col-4">
+    <h2>Map goes here</h2>
+  </div>
+</div>
+
+<h2><%= link_to "Add a new space", new_space_path %></h2>
