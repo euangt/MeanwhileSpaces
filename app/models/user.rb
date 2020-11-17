@@ -1,9 +1,9 @@
 class User < ApplicationRecord
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
 
-  validates :password, presence: true, confirmation: true, length: { within: 6..40 }
-  validates :phone_number, presence: true
+  # validates :password, presence: true, confirmation: true, length: { within: 6..40 }
+  # validates :phone_number, presence: true
 
   # TO-DO: has_many :windows
 
