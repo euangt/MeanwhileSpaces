@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    if @user.update(@user.save)
+    if @user.update
       redirect_to @user
     else
       render :edit
