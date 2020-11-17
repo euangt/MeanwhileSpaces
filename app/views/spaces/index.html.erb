@@ -16,4 +16,6 @@
   </div>
 </div>
 
-<h2><%= link_to "Add a new space", new_space_path %></h2>
+<% if policy(Space).create? %>
+  <%= link_to "New space", new_space_path %>
+<% end %>
