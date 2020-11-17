@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = current_user.booking
+    @bookings = current_user.booking # Make sure that .booking is correct/ .bookings?
   end
 
   def new
