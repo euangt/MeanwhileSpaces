@@ -10,11 +10,12 @@ class SpacesController < ApplicationController
       end 
     
       def new 
-        @space = Space.new 
+        @space = Space.new
       end 
     
       def create 
         @space = Space.new(space_params)
+        #@space.user = 
         if @space.save 
           redirect_to space_path(@space)
         else 
@@ -41,6 +42,6 @@ class SpacesController < ApplicationController
       end
     
       def space_params 
-        #ToDo, identify params to be passed into the space_params - just: name - current_user can be used for
+        params.require(:space).permit(:title, :address, :price_per_day)
       end
 end

@@ -20,6 +20,8 @@
     <h2>Map goes here</h2>
   </div>
 </div>
-<%= link_to "Remove this space", space_path(@space), method: :delete, data: {confirm: 'Are you sure you want to renove this space?'}  %>
+<%= link_to "Edit this space", edit_space_path(@space)  %>
+
+<%= link_to "Remove this space", space_path(@space), method: :delete, data: {confirm: 'Are you sure you want to renove this space?'}  %><br>
 
 <%= link_to "All spaces", spaces_path %>
