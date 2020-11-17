@@ -1,5 +1,6 @@
 class SpacesController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :find_space, only: [:show, :update, :edit, :destroy]
 
   def index 
