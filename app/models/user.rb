@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   validates :password, presence: true, confirmation: true, length: { within: 6..40 }
-  validates :phone_number, presence: true, numericality: true, length: { minimum: 10, maximum: 15 }
+  validates :phone_number, presence: true
 
   # TO-DO: has_many :windows
 
