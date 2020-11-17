@@ -24,7 +24,7 @@ user1 = User.create!(
 user2 = User.create!(
   email: "ben@example.com",
   first_name: "Ben",
-  last_name: "Gordon"
+  last_name: "Gordon",
   phone_number: "+49-160-5554-200",
   password: "123456"
 
@@ -354,7 +354,7 @@ space17 = Space.create!(
 space18 = Space.create!(
   title: 'Modern storefront in vibrant Mitte',
   floor_space: 47,
-  price_per_day: ,
+  price_per_day: 50,
   description: "Skalitzer Str. 64 Kreuzberg, Berlin",
   address: "Located in upscale part of town, the space is perfect for retail pop-ups",
   longitude: nil,
