@@ -11,8 +11,9 @@
     <%= f.input :internet, inline_label: 'Internet' %>
     <%= f.input :lighting, inline_label: 'Lighting' %>
     <%= f.input :availability_status, inline_label: 'Is this available?' %>
+    <%= f.input :photo, as: :file %>
    </div>
-  <div class="form-actions"> 
+   <div class="form-actions"> 
     <%= f.button :submit, class: "btn btn-primary"%>
    </div>
 <% end %>
