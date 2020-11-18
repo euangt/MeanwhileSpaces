@@ -1,5 +1,5 @@
-<h1>bookings of current user</h1>
 <div class="container">
+<<<<<<< HEAD
   <div class="row justify-content-center">
     <% @bookings.each do |booking| %>
     <div class="col-8">
@@ -13,5 +13,22 @@
   </div>
   <div class="col-4">
     <h2>Map goes here</h2>
+=======
+  <h1>bookings of current user</h1>
+  <div class="container">
+    <div class="row justify-content-center">
+      <% @bookings.each do |booking| %>
+      <div class="col-8">
+      <p>Name: <%= booking.space.title %></p>
+      <p>Address: <%= booking.space.address %><p>
+      <p>Price: <%= booking.space.price_per_day %><p>
+      <p>Dates: <%= booking.start_date %> - <%= booking.end_date %></p>
+      </div>
+      <% end %>>
+    </div>
+    <div class="col-4">
+      <h2>Map goes here</h2>
+    </div>
+>>>>>>> master
   </div>
 </div>
