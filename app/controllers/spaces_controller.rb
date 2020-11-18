@@ -4,6 +4,13 @@ class SpacesController < ApplicationController
 
   def index
     @spaces = policy_scope(Space)
+
+    @markers = @spaces.geocoded.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude
+      }
+    end
   end
 
   def show
@@ -15,7 +22,7 @@ class SpacesController < ApplicationController
     @space = Space.new
     authorize @space
   end
-  
+
   def create
     @space = Space.new(space_params)
     @space.user = current_user
