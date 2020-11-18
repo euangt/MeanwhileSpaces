@@ -16,12 +16,23 @@
       <p>Lighting: <%= @space.lighting %></p>
     </div>
   </div>
+
+    <h1>Book this Space</h1>
+    <!-- if for pundit -->
+    <%= simple_form_for [@space, @booking] do |f| %>
+       <div class="form-inputs">
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+       </div>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-primary"%>
+       </div>
+    <% end %>
+
   <div>
     <h2>Map goes here</h2>
   </div>
 </div>
-
-
 
 <%= link_to "All spaces", spaces_path %>
 
@@ -32,3 +43,4 @@
   <% if policy(@space).destroy? %>
     <%= link_to "Remove this space", space_path(@space), method: :delete, data: {confirm: 'Are you sure you want to renove this space?'}  %>
   <% end %>
+

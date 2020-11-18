@@ -8,6 +8,7 @@ class SpacesController < ApplicationController
 
   def show
     authorize @space
+    @booking = Booking.new
   end
 
   def new
@@ -48,7 +49,7 @@ class SpacesController < ApplicationController
   end
 
   def space_params
-    params.require(:space).permit(:space_id, :title, :address, :price_per_day, :heating, :internet, :lighting, :floor_space)
+    params.require(:space).permit(:space_id, :title, :address, :price_per_day, :heating, :internet, :lighting, :floor_space, photos: [])
   end
 end
 

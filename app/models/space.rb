@@ -1,5 +1,6 @@
 class Space < ApplicationRecord
   belongs_to :user
+  has_many :bookings, dependent: :destroy # not sure about this?
   validates :title, presence: true
 
   validates :price_per_day, presence: true
