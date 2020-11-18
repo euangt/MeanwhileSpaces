@@ -97,11 +97,11 @@ user10 = User.create!(
 puts 'Seeding spaces'
 
 space1 = Space.create!(
-  title: 'Green Oasis in Berlin',
+  title: 'Green Oasis in Paris',
   floor_space: 5,
   price_per_day: 40,
   description: "The space is the store front of a flower shop in Kreuzberg. Suitable for small displays and artworks",
-  address: "Manteuffel Str. 34, 10999",
+  address: "Bonne-Nouvelle 75002 Paris, France",
   longitude: nil,
   latitude: nil,
   internet: true,
@@ -116,7 +116,7 @@ space2 = Space.create!(
   floor_space: 30.7,
   price_per_day: 34,
   description: "Former restaurant space with entrance facing the street. Equipped with Kitchen, and available while waiting for renovation works to start.",
-  address: "Skalitzer Str. 34",
+  address: "2 Rue du Pont Neuf",
   longitude: nil,
   latitude: nil,
   internet: false,
@@ -127,11 +127,11 @@ space2 = Space.create!(
 )
 
 space3 = Space.create!(
-  title: 'Bright, Cozy, and Central in Berlin Mitte',
+  title: 'Bright, Cozy, and Central in Paris',
   floor_space: 30,
   price_per_day: 33,
   description: "The space is equipped with a large kitchen and one small bathroom, it also has four chairs, and a lounge area in the back.",
-  address: "Genslerstraße 84 Berlin Wedding",
+  address: "19 Rue Beaubourg",
   longitude: nil,
   latitude: nil,
   internet: false,
@@ -142,11 +142,11 @@ space3 = Space.create!(
 )
 
 space4 = Space.create!(
-  title: 'CENTRAL Neukölln quiet pizzeria window',
+  title: 'CENTRAL quiet pizzeria window',
   floor_space: 15,
   price_per_day: 5,
   description: "Extra small room of a Pizzeria with a large window facing the street, no direct access form the room to the street but with full-heigh window. Perfect for small exhibits",
-  address: "Brandenburgische Straße 17 Berlin Neukölln",
+  address: "Saint-Germain-des-Prés",
   longitude: nil,
   latitude: nil,
   internet: false,
@@ -160,8 +160,8 @@ space5 = Space.create!(
   title: 'Charming city spot',
   floor_space: 150,
   price_per_day: 44,
-  description: "The space is located in the Rural suburb of Berlin. Adjacent to a kindergarden, equipped with a small but working kitchen and large open space to fit about 50 people. ",
-  address: "Leopoldstraße 48 Berlin Britz",
+  description: "The space is located in central Paris. Adjacent to a kindergarden, equipped with a small but working kitchen and large open space to fit about 50 people. ",
+  address: "Saint-Thomas-d'Aquin",
   longitude: nil,
   latitude: nil,
   internet: false,
@@ -172,11 +172,11 @@ space5 = Space.create!(
 )
 
 space6 = Space.create!(
-  title: 'Former retail space in Wittenau',
+  title: 'Former retail space in Paris',
   floor_space: 109,
   price_per_day: 43,
-  description: "The space is located in a prime location in the quiet neighbourhood of Wittenau. The apartment is equipped with a large double bed. The space has no electricty, and no kitchen -  it has got a fridge, a kettle and a bathroom with shower",
-  address: "Waßmannsdorfer Chaussee 75 Berlin Wittenau",
+  description: "The space is located in a prime location in the quiet neighbourhood of Paris. The apartment is equipped with a large double bed. The space has no electricty, and no kitchen -  it has got a fridge, a kettle and a bathroom with shower",
+  address: "Saint-Thomas-d'Aquin",
   longitude: nil,
   latitude: nil,
   internet: true,
@@ -187,11 +187,11 @@ space6 = Space.create!(
 )
 
 space7 = Space.create!(
-  title: 'Whole Store Space in Berlin Center',
+  title: 'Whole Store Space in Paris center',
   floor_space: 46,
   price_per_day: 39,
   description: "On the groundfloor corner of a historical building, the space is unique with it's wooden walls and retro style store front. Equipped with a small office in the back. Available for rent through the whole winter.",
-  address: "Leopoldstraße 83 Berlin Friedrichshagen",
+  address: "56 Rue du Faubourg Saint-Honoré",
   longitude: nil,
   latitude: nil,
   internet: true,
@@ -202,11 +202,11 @@ space7 = Space.create!(
 )
 
 space8 = Space.create!(
-  title: 'Rustic former retail space next to the U-bahn station',
+  title: 'Rustic former retail space next to the subway station',
   floor_space: 75,
   price_per_day: 9,
   description: "Empty retails space open for short-term pop-up/exhibitions. Cozy neighbourhood with galleries and cafes near by. Equipped with a small kitchen in the back.",
-  address: "Genslerstraße 42 Berlin Prenzlauer Berg",
+  address: "43 Rue Buffon 75005 Paris, France",
   longitude: nil,
   latitude: nil,
   internet: false,
@@ -217,11 +217,11 @@ space8 = Space.create!(
 )
 
 space9 = Space.create!(
-  title: 'Gritty industrial site in Friedrichshain',
+  title: 'Gritty industrial site in Paris',
   floor_space: 200,
   price_per_day: 11,
   description: "Privately owned warehouse space waiting for large scale renovation in 2022. Perfect for parties and largescale installations.",
-  address: "Leopoldstraße 87 Berlin Friedrichshain",
+  address: "31-11 Boulevard de l'Hôpital",
   longitude: nil,
   latitude: nil,
   internet: false,
@@ -236,7 +236,7 @@ space10 = Space.create!(
   floor_space: 65,
   price_per_day: 42,
   description: "The store front window facing the shopping street has a antique feel. Perfect for anyone wanting to showcase their craft. Installation can only be done during open hours. ",
-  address: "Genslerstraße 47 Berlin Spandau",
+  address: "1 Rue Boyer, 75020 Paris, France",
   longitude: nil,
   latitude: nil,
   internet: false,
@@ -247,11 +247,11 @@ space10 = Space.create!(
 )
 
 space11 = Space.create!(
-  title: 'Attractive large space in the heart of Berlin Friedrichshain',
+  title: 'Attractive large space in the heart of Paris',
   floor_space: 900,
   price_per_day: 40,
   description: "Former retail space open for use while the building waits for renovation works in 2021",
-  address: "Brandenburgische Straße 86 Berlin Kaulsdorf",
+  address: "4-6 Rue Etienne Dolet, 75020 Paris, France",
   longitude: nil,
   latitude: nil,
   internet: false,
@@ -266,7 +266,7 @@ space12 = Space.create!(
   floor_space: 2,
   price_per_day: 10,
   description: "Bright space equipped with large kitchen for professional chefs. Available until the demolishing of the building",
-  address: "Genslerstraße 18 Berlin Tiergarten",
+  address: "108 Boulevard de Ménilmontant, 75020 Paris, France",
   longitude: nil,
   latitude: nil,
   internet: false,
