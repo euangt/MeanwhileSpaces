@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Deleting all spaces and users...'
 
-Space.delete_all
-User.delete_all
+Space.destroy_all
+User.destroy_all
 
 puts 'Seeding users...'
 
