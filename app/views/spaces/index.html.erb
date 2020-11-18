@@ -1,4 +1,5 @@
 
+
 <div class="container mt-5">
   <div class="text-center">
     <br>
@@ -20,8 +21,11 @@
         <% @spaces.each do |space| %>
         <div class="card-space">
           <div class="card-image">
-            <img src="https://source.unsplash.com/random/?stores" alt="Store">
-            <%#= cl_image_path space.photo.key("THE_IMAGE_ID_FROM_LIBRARY" %>
+            <% if space.photo.attached?  %>
+              <%= cl_image_tag(space.photo.key) %>
+            <% else %>
+              <img src="https://source.unsplash.com/random/?stores" alt="">
+            <% end %>
           </div>
           <div class="card-space-info">
             <div>
