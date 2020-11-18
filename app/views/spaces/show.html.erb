@@ -20,7 +20,6 @@
     <h2>Map goes here</h2>
   </div>
   <div>
-    <h2>Photos here</h2>
     <% if @space.photo.attached?  %>
             <%= cl_image_tag(@space.photo.key, width: 400, height: 300, crop: :fill) %>
           <% else %>
