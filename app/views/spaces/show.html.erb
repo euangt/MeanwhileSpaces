@@ -21,9 +21,11 @@
   </div>
   <div>
     <h2>Photos here</h2>
-    <%# <% @space.photos.each do |photo| %>
-      <%# <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %> %>
-    <%# <% end %> %>
+    <% if @space.photo.attached?  %>
+            <%= cl_image_tag(@space.photo.key, width: 400, height: 300, crop: :fill) %>
+          <% else %>
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="" width="200" height="200" alt="">
+          <% end %>
   </div>
 </div>
 
