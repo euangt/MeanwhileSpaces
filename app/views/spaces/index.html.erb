@@ -4,10 +4,16 @@
   <div class="row justify-content-center">
     <% @spaces.each do |space| %>
     <div class="col-8">
-    <p>Name: <%= link_to space.title, space_path(space) %></p>
-    <p>Address: <%= space.address %>
-    <p>For rent: <%= space.availability_status %>
-    <p>Price: <%= space.price_per_day %>
+      <div>
+        <p>Name: <%= link_to space.title, space_path(space) %></p>
+        <p>Address: <%= space.address %>
+        <p>For rent: <%= space.availability_status %>
+        <p>Price: <%= space.price_per_day %>
+      </div>
+      <div>
+        <h2>Photo Here</h2>
+        <%# <%= cl_image_tag(space.photo.key, width: 400, height: 300, crop: :fill) %> %>
+      </div>
     </div>
     <<% end %>>
   </div>
