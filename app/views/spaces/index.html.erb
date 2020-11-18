@@ -22,7 +22,7 @@
         <div class="card-space">
           <div class="card-image">
             <% if space.photo.attached?  %>
-              <%= cl_image_tag(space.photo.key, width: 200, height: 200, crop: :fill) %>
+              <%= cl_image_tag(space.photo.key) %>
             <% else %>
               <img src="https://source.unsplash.com/random/?stores" alt="">
             <% end %>
