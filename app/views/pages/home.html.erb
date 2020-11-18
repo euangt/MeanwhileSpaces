@@ -1,16 +1,28 @@
-<div>
-  <%= render 'shared/navbar' %>
-</div>
-<br><br>
-<div class="container mt-4">
-  <div class="row justify-content-center">
-    <div class="col-4">
-      <h1>Pages#home</h1>
-      <p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-banner">
+  <div class="container">
+    <%= link_to 'Log-in', new_user_session_path, class: "btn btn-ghost" %>
+    <h1>Meanwhile Spaces</h1>
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <p>Find the space you need to bring your vision to reality</p>
+      </div>
+    </div>
+    <%= link_to 'Go see spaces', spaces_path, class: "btn btn-flat" %>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="banner-text">
+          <p>Meanwhile Spaces connects people who want to rent out spaces with people who are looking for pop-up/exhibition spaces in that locale.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <%= link_to 'Log-in', new_user_session_path, class: "btn btn-primary" %>
-      <%= link_to 'Go see spaces', spaces_path, class: "btn btn-primary" %>
+</div>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <%= "Meanwhile Spaces is an online marketplace that connects people who want to rent out spaces with people who are looking for pop-up/exhibition spaces in that locale." * 10 %>
     </div>
   </div>
 </div>
-
