@@ -1,25 +1,44 @@
-<h1>All of the spaces near you</h1>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <% @spaces.each do |space| %>
-      <div class="col-8">
-        <div>
-          <p>Name: <%= link_to space.title, space_path(space) %></p>
-          <p>Address: <%= space.address %>
-          <p>For rent: <%= space.availability_status %>
-          <p>Price: <%= space.price_per_day %>
-        </div>
 
-      </div>
-      <div class="col-4">
-        <h2>Map goes here</h2>
-      </div>
+<div class="container mt-5">
+  <div class="text-center">
+    <br>
+    <h1>All of the spaces near you</h1>
+    <br>
+    <% if policy(Space).create? %>
+      <%= link_to "Create new space", new_space_path, class: 'btn btn-ghost' %>
     <% end %>
   </div>
 </div>
 
-<% if policy(Space).create? %>
-  <%= link_to "New space", new_space_path %>
-<% end %>
+<br>
+
+  <div class="home-container">
+    <div class="content">
+
+      <div class="cards">
+
+        <% @spaces.each do |space| %>
+        <div class="card-space">
+          <div class="card-image">
+            <img src="https://source.unsplash.com/random/?stores" alt="Store">
+            <%#= cl_image_path space.photo.key("THE_IMAGE_ID_FROM_LIBRARY" %>
+          </div>
+          <div class="card-space-info">
+            <div>
+              <h2 class="card-trip-pricing"><strong>£<%= space.price_per_day %></strong>/day</h2>
+              <h2><%= link_to space.title, space_path(space) %></h2>
+              <p><%= space.address %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+
+      <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoieWtvb2thYXNpIiwiYSI6ImNrZ3c5MW1neDA1bzAycnFjeXF6Z2NpNmsifQ.ZgvN0i2aOJW3PHqtqALUyA'>
+
+    </div>
+  </div>
+
 
