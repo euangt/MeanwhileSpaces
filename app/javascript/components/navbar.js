@@ -1,20 +1,15 @@
 
 const initUpdateNavbarOnScroll = () => {
-
-  $('body').css('padding-top', $('.navbar').outerHeight() + 'px')
-
-  if ($('.smart-scroll').length > 0) { // check if element exists
-     const last_scroll_top = 0;
-    $(window).on('scroll', function() {
-        scroll_top = $(this).scrollTop();
-        if(scroll_top < last_scroll_top) {
-            $('.smart-scroll').removeClass('scrolled-down').addClass('scrolled-up');
-        }
-        else {
-            $('.smart-scroll').removeClass('scrolled-up').addClass('scrolled-down');
-        }
-        last_scroll_top = scroll_top;
+  const navbar = document.querySelector('.navbar-lewagon');
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= window.innerHeight) {
+        navbar.classList.add('navbar-lewagon-white');
+      } else {
+        navbar.classList.remove('navbar-lewagon-white');
+      }
     });
+  }
 }
 
 export { initUpdateNavbarOnScroll };

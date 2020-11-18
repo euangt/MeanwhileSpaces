@@ -1,33 +1,50 @@
-<h1><%= @space.title %></h1>
+<div class="space-banner">
+  <div class="container">
+  </div>
+</div>
 
-<div class="container">
+<div class="container mt-3">
   <div class="row">
-    <div class="col">
-      <p>Name: <%= @space.title %></p>
-      <p>About: <%= @space.description %></p>
-      <p>Address: <%= @space.address %>
-      <p>Available for rent: <%= @space.availability_status %>
-      <p>Price: £<%= @space.price_per_day %>
-    </div>
-    <div class="col">
-      <p>Floor space: <%= @space.floor_space %></p>
-      <p>Internet: <%= @space.internet %></p>
-      <p>Heating: <%= @space.heating %></p>
-      <p>Lighting: <%= @space.lighting %></p>
+    <div class="col-sm-12 col-md-6">
+      <%= link_to "< Back", spaces_path %>
+      <h1><%= @space.title %></h1>
     </div>
   </div>
 
-    <h1>Book this Space</h1>
-    <!-- if for pundit -->
-    <%= simple_form_for [@space, @booking] do |f| %>
-       <div class="form-inputs">
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-       </div>
-      <div class="form-actions">
-        <%= f.button :submit, class: "btn btn-primary"%>
-       </div>
-    <% end %>
+  <p><em><%= @space.address %></em></p>
+  <div class="row">
+    <div class="col-sm-10 col-lg-4">
+      <p><%= @space.description %></p>
+      <p>Available for rent: <%= @space.availability_status %></p>
+      <p>Price: £<%= @space.price_per_day %></p>
+      <br><br>
+    </div>
+    <div class="col-sm-10 col-lg-3">
+      <p>Floor space: <%= @space.floor_space %>sqm</p>
+      <p>Internet: <%= @space.internet %></p>
+      <p>Heating: <%= @space.heating %></p>
+      <p>Lighting: <%= @space.lighting %></p>
+      <br><br>
+    </div>
+    <div class="col-sm-10 col-lg-5 container-book">
+      <div class="card-book">
+          <h2 class="text-center">Book this Space</h2>
+          <% if policy(Booking).create? %>
+            <%= simple_form_for [@space, @booking] do |f| %>
+              <div class="form-inputs">
+                <%= f.input :start_date %>
+                <%= f.input :end_date %>
+              </div>
+              <br>
+              <div class="form-actions text-center">
+                <%= f.button :submit, class: "btn btn-flat"%>
+              </div>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
 
   <div>
     <h2>Map goes here</h2>
@@ -41,8 +58,6 @@
   </div>
 </div>
 
-<%= link_to "All spaces", spaces_path %>
-
   <% if policy(@space).edit? %>
     <%= link_to "Update", edit_space_path(@space) %>
   <% end %>
@@ -50,4 +65,6 @@
   <% if policy(@space).destroy? %>
     <%= link_to "Remove this space", space_path(@space), method: :delete, data: {confirm: 'Are you sure you want to renove this space?'}  %>
   <% end %>
+
+  <br><br>
 
