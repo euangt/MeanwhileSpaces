@@ -4,29 +4,29 @@
 </div>
 
 <div class="container mt-3">
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <%= link_to "< Back", spaces_path %>
-      <h1><%= @space.title %></h1>
-    </div>
-  </div>
-
+  <%= link_to "< Back", spaces_path %>
+  <h1><%= @space.title %></h1>
   <p><em><%= @space.address %></em></p>
+
   <div class="row">
-    <div class="col-sm-10 col-lg-4">
-      <p><%= @space.description %></p>
-      <p>Available for rent: <%= @space.availability_status %></p>
-      <p>Price: £<%= @space.price_per_day %></p>
-      <br><br>
+    <div class="col-8">
+      <div class="row">
+        <div class="col-6">
+          <p><%= @space.description %></p>
+          <p>Available for rent: <%= @space.availability_status %></p>
+          <p>Price: £<%= @space.price_per_day %></p>
+          <br><br>
+        </div>
+        <div class="col-4">
+          <p>Floor space: <%= @space.floor_space %>sqm</p>
+          <p>Internet: <%= @space.internet %></p>
+          <p>Heating: <%= @space.heating %></p>
+          <p>Lighting: <%= @space.lighting %></p>
+          <br><br>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-10 col-lg-3">
-      <p>Floor space: <%= @space.floor_space %>sqm</p>
-      <p>Internet: <%= @space.internet %></p>
-      <p>Heating: <%= @space.heating %></p>
-      <p>Lighting: <%= @space.lighting %></p>
-      <br><br>
-    </div>
-    <div class="col-sm-10 col-lg-5 container-book">
+    <div class="col-4">
       <div class="card-book">
           <h2 class="text-center">Book this Space</h2>
           <% if policy(Booking).create? %>
@@ -45,17 +45,18 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-sm-10 col-6">
+      <div class="card-image">
+        <% if @space.photo.attached?  %>
+          <%= cl_image_tag @space.photo.key, width: 560, height: 360, crop: :fill %>
+        <% else %>
+          <img src="https://source.unsplash.com/random/?stores" class="" width="560" height="360" alt="">
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-  <div>
-    <h2>Map goes here</h2>
-  </div>
-  <div>
-    <% if @space.photo.attached?  %>
-            <%= cl_image_tag(@space.photo.key, width: 400, height: 300, crop: :fill) %>
-          <% else %>
-            <img src="https://source.unsplash.com/random/?stores" class="" width="200" height="200" alt="">
-          <% end %>
-  </div>
 </div>
 
   <% if policy(@space).edit? %>
@@ -66,5 +67,7 @@
     <%= link_to "Remove this space", space_path(@space), method: :delete, data: {confirm: 'Are you sure you want to renove this space?'}  %>
   <% end %>
 
+  <div>
+    <h2>Map goes here</h2>
+  </div>
   <br><br>
-
