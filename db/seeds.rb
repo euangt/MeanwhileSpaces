@@ -5,358 +5,358 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts 'Deleting all spaces and users...'
+puts 'Deleting all bookings, spaces and users...'
 Booking.delete_all
 Space.delete_all
 User.delete_all
 
 puts 'Seeding users...'
 
-user1 = User.create!(
-  email: "yoko@example.com",
+user_tokyo1 = User.create!(
+  email: "hiroshi@hiroshi.com",
+  first_name: "Hiroshi",
+  last_name: "Kobayashi",
+  password: "123456"
+  )
+
+user_tokyo2 = User.create!(
+  email: "yoko@yoko.com",
   first_name: "Yoko",
   last_name: "Kasai",
-  phone_number: "+49-160-5300-913",
   password: "123456"
-
   )
 
-user2 = User.create!(
-  email: "ben@example.com",
+user_tokyo3 = User.create!(
+  email: "tomoko@tomoko.com",
+  first_name: "Takashi",
+  last_name: "Tanaka",
+  password: "123456"
+  )
+
+user_berlin1 = User.create!(
+  email: "ben@ben.com",
   first_name: "Ben",
   last_name: "Gordon",
-  phone_number: "+49-160-5554-200",
   password: "123456"
-
   )
-user3 = User.create!(
-  email: "euan@example.com",
+
+user_berlin2 = User.create!(
+  email: "Euan@euan.com",
   first_name: "Euan",
   last_name: "Gillespie-Taylor",
-  phone_number: "+49-160-5554-200",
   password: "123456"
-
   )
-user4 = User.create!(
-  email: "max@example.com",
-  first_name: "Max",
-  last_name: "Glassmacher",
-  phone_number: "+49-160-5554-400",
-  password: "123456"
 
-  )
-user5 = User.create!(
-  email: "iri@example.com",
-  first_name: "Iri",
-  last_name: "Popa",
-  phone_number: "+49-160-5554-300",
-  password: "123456"
-
-  )
-user6 = User.create!(
-  email: "valerie@example.com",
-  first_name: "Valerie",
-  last_name: "Schraauwers",
-  phone_number: "+49-160-5554-913",
-  password: "123456"
-
-  )
-user7 = User.create!(
-  email: "mersad@example.com",
-  first_name: "Mersad",
-  last_name: "Ajanovic",
-  phone_number: "+49-163-5555-297",
-  password: "123456"
-
-  )
-user8 = User.create!(
-  email: "alex@example.com",
-  first_name: "Alex",
-  last_name: "Antsiferov",
-  phone_number: "+49-240-5554-913",
-  password: "123456"
-
-  )
-user9 = User.create!(
-  email: "chris@example.com",
-  first_name: "Christoph",
-  last_name: "Bohne",
-  phone_number: "+49-152-5553-778",
-  password: "123456"
-
-  )
-user10 = User.create!(
-  email: "lukas@example.com",
+user_berlin3 = User.create!(
+  email: "lukas@lukas.com",
   first_name: "Lukas",
-  last_name: "Hortsmann",
-  phone_number: "+49-160-5554-800",
+  last_name: "Lukas Hortsmann",
   password: "123456"
-
   )
 
 puts 'Seeding spaces'
 
-space1 = Space.create!(
-  title: 'Green Oasis in Berlin',
-  floor_space: 5,
+space_tokyo1 = Space.create!(
+  title: 'Ex-Shop turned Gallery Space in Central Tokyo',
+  floor_space: 20,
   price_per_day: 40,
-  description: "The space is the store front of a flower shop in Kreuzberg. Suitable for small displays and artworks",
-  address: "Manteuffel Str. 34, 10999",
+  description: "The space is a former store in central tokyo, in Azabu Juban. The first floor has been cleared out and has made into a gallery space. It's equipped with lighting. Suitable for small shows.",
+  address: "2 Chome Azabujuban, Minato City, Tokyo 106-0045, Japan",
   internet: true,
   availability_status: true,
   heating: true,
   lighting: true,
-  user: user1
+  user: user_tokyo1
 )
 
-space2 = Space.create!(
+space_tokyo2 = Space.create!(
   title: 'Charming Ground Floor Restaurant in Prime Location',
   floor_space: 30.7,
   price_per_day: 34,
-  description: "Former restaurant space with entrance facing the street. Equipped with Kitchen, and available while waiting for renovation works to start.",
-  address: "Skalitzer Str. 34",
+  description: "Former restaurant space with entrance facing the street. Equipped with Kitchen, and available for use while waiting for renovation works to start.",
+  address: "4-chōme-9 Minamiazabu, Minato City, Tokyo 106-0047, Japan",
   internet: false,
   availability_status: true,
   heating: true,
   lighting: false,
-  user: user2
+  user: user_tokyo1
 )
 
-space3 = Space.create!(
-  title: 'Bright, Cozy, and Central in Berlin Mitte',
+space_tokyo3 = Space.create!(
+  title: 'Bright, Cozy, and Central in Tokyo',
   floor_space: 30,
   price_per_day: 33,
-  description: "The space is equipped with a large kitchen and one small bathroom, it also has four chairs, and a lounge area in the back.",
-  address: "Genslerstraße 84 Berlin Wedding",
+  description: "The ground floor space is equipped with a large kitchen and one small bathroom, it also has some chairs, and a lounge area in the back.",
+  address: "2-chōme-7 Mita, Minato City, Tokyo 108-0073, Japan",
   internet: false,
   availability_status: true,
   heating: false,
   lighting: true,
-  user: user3
+  user: user_tokyo1
 )
 
-space4 = Space.create!(
-  title: 'CENTRAL Neukölln quiet pizzeria window',
+space_tokyo4 = Space.create!(
+  title: 'Downtown Tokyo Gallery Space',
   floor_space: 15,
-  price_per_day: 5,
-  description: "Extra small room of a Pizzeria with a large window facing the street, no direct access form the room to the street but with full-heigh window. Perfect for small exhibits",
-  address: "Brandenburgische Straße 17 Berlin Neukölln",
+  price_per_day: 200,
+  description: "Gallery space in Asakusa with a large window facing a busy street in the historical part of Tokyo. Perfect for small exhibitions. Available for long-term rent.",
+  address: "5 Chome Asakusabashi, Taito City, Tokyo 111-0053, Japan",
   internet: false,
   availability_status: true,
   heating: true,
   lighting: true,
-  user: user4
+  user: user_tokyo2
 )
 
-space5 = Space.create!(
-  title: 'Charming city spot',
+space_tokyo5 = Space.create!(
+  title: 'Charming City Spot - w/ Kitchen',
   floor_space: 150,
-  price_per_day: 44,
-  description: "The space is located in the Rural suburb of Berlin. Adjacent to a kindergarden, equipped with a small but working kitchen and large open space to fit about 50 people. ",
-  address: "Leopoldstraße 48 Berlin Britz",
+  price_per_day: 300,
+  description: "The space is located in central Tokyo. Equipped with a small but working kitchen and large open space to fit about 50 people. ",
+  address: "Kanda Konyacho, Chiyoda City, Tokyo 101-0035, Japan",
   internet: false,
   availability_status: true,
   heating: true,
   lighting: true,
-  user: user5
+  user: user_tokyo2
 )
 
-space6 = Space.create!(
-  title: 'Former retail space in Wittenau',
+space_tokyo6 = Space.create!(
+  title: 'Former Retail Space in Tokyo',
   floor_space: 109,
-  price_per_day: 43,
-  description: "The space is located in a prime location in the quiet neighbourhood of Wittenau. The apartment is equipped with a large double bed. The space has no electricty, and no kitchen -  it has got a fridge, a kettle and a bathroom with shower",
-  address: "Waßmannsdorfer Chaussee 75 Berlin Wittenau",
+  price_per_day: 400,
+  description: "The space is located in a prime location in the quiet neighbourhood of Tokyo. The space has no kitchen -  it has got a fridge, a kettle and a bathroom with shower",
+  address: "1 Chome Kanda Sudacho, Chiyoda City, Tokyo 101-0041, Japan",
   internet: true,
   availability_status: true,
   heating: true,
   lighting: true,
-  user: user1
+  user: user_tokyo3
 )
 
-space7 = Space.create!(
-  title: 'Whole Store Space in Berlin Center',
+space_tokyo7 = Space.create!(
+  title: 'Whole Store Space in Tokyo center',
   floor_space: 46,
-  price_per_day: 39,
+  price_per_day: 300,
   description: "On the groundfloor corner of a historical building, the space is unique with it's wooden walls and retro style store front. Equipped with a small office in the back. Available for rent through the whole winter.",
-  address: "Leopoldstraße 83 Berlin Friedrichshagen",
+  address: "1 Chome Uchikanda, Chiyoda City, Tokyo 101-0047, Japan",
   internet: true,
   availability_status: true,
   heating: false,
   lighting: true,
-  user: user2
+  user: user_tokyo3
 )
 
-space8 = Space.create!(
-  title: 'Rustic former retail space next to the U-bahn station',
+space_tokyo8 = Space.create!(
+  title: 'Western Toyko Perfect Retails Space Next To Subway',
   floor_space: 75,
-  price_per_day: 9,
+  price_per_day: 400,
   description: "Empty retails space open for short-term pop-up/exhibitions. Cozy neighbourhood with galleries and cafes near by. Equipped with a small kitchen in the back.",
-  address: "Genslerstraße 42 Berlin Prenzlauer Berg",
+  address: "2 Chome Mejiro, Toshima City, Tokyo 171-0031, Japan",
   internet: false,
   availability_status: true,
   heating: false,
   lighting: true,
-  user: user3
+  user: user_tokyo3
 )
 
-space9 = Space.create!(
-  title: 'Gritty industrial site in Friedrichshain',
+space_tokyo9 = Space.create!(
+  title: 'Gritty industrial site in Tokyo',
   floor_space: 200,
-  price_per_day: 11,
+  price_per_day: 500,
   description: "Privately owned warehouse space waiting for large scale renovation in 2022. Perfect for parties and largescale installations.",
-  address: "Leopoldstraße 87 Berlin Friedrichshain",
+  address: "1 Chome Miyoshi, Koto City, Tokyo 135-0022, Japan",
   internet: false,
   availability_status: true,
   heating: true,
   lighting: true,
-  user: user4
+  user: user_tokyo3
 )
 
-space10 = Space.create!(
-  title: 'Large store window of my pharmacy',
+space_tokyo10 = Space.create!(
+  title: 'Gritty industrial site in Tokyo',
+  floor_space: 200,
+  price_per_day: 500,
+  description: "Privately owned warehouse space waiting for large scale renovation in 2022. Perfect for parties and largescale installations.",
+  address: "3 Chome Ikebukuro, Toshima City, Tokyo 171-0014, Japan",
+  internet: false,
+  availability_status: true,
+  heating: true,
+  lighting: true,
+  user: user_tokyo3
+)
+
+space_tokyo11 = Space.create!(
+  title: 'Residencial and Quiet but Busy Area of Town',
+  floor_space: 200,
+  price_per_day: 500,
+  description: "Near Tokyo bay, in an residential area. Quiet, but perfect for small shows",
+  address: "6 Chome Ojima, Koto City, Tokyo 136-0072, Japan",
+  internet: false,
+  availability_status: true,
+  heating: true,
+  lighting: true,
+  user: user_tokyo3
+)
+
+space_tokyo12 = Space.create!(
+  title: 'Big Space by Tokyo Bay',
+  floor_space: 200,
+  price_per_day: 500,
+  description: "Privately owned warehouse space waiting for large scale renovation in 2022. Perfect for parties and largescale installations.",
+  address: "4 Chome Toyo, Koto City, Tokyo 135-0016, Japan",
+  internet: false,
+  availability_status: true,
+  heating: true,
+  lighting: true,
+  user: user_tokyo3
+)
+
+
+berlin_space1 = Space.create!(
+  title: 'Large Store Window of my Pharmacy',
   floor_space: 65,
-  price_per_day: 42,
+  price_per_day: 30,
   description: "The store front window facing the shopping street has a antique feel. Perfect for anyone wanting to showcase their craft. Installation can only be done during open hours. ",
-  address: "Genslerstraße 47 Berlin Spandau",
+  address: "Manteuffelstraße 106-110, 10997 Berlin",
   internet: false,
   availability_status: true,
   heating: true,
   lighting: false,
-  user: user5
+  user: user_berlin1
 )
 
-space11 = Space.create!(
-  title: 'Attractive large space in the heart of Berlin Friedrichshain',
+berlin_space2 = Space.create!(
+  title: 'Attractive large space in the heart of Berlin',
   floor_space: 900,
   price_per_day: 40,
   description: "Former retail space open for use while the building waits for renovation works in 2021",
-  address: "Brandenburgische Straße 86 Berlin Kaulsdorf",
+  address: "Storkower Str. 50, 10409 Berlin",
   internet: false,
   availability_status: true,
   heating: true,
   lighting: true,
-  user: user1
+  user: user_berlin1
 )
 
-space12 = Space.create!(
+berlin_space3 = Space.create!(
   title: "Luiminous pop-up space with Kitchen",
   floor_space: 2,
   price_per_day: 10,
   description: "Bright space equipped with large kitchen for professional chefs. Available until the demolishing of the building",
-  address: "Genslerstraße 18 Berlin Tiergarten",
+  address: "108 Boulevard de Ménilmontant, 75020 Paris, France",
   internet: false,
   availability_status: true,
   heating: false,
   lighting: true,
-  user: user2
+  user: user_berlin1
 )
 
-space13 = Space.create!(
+berlin_space4 = Space.create!(
   title: 'Inviting storefront in charming Prenzlauer Berg',
   floor_space: 4,
   price_per_day: 13,
   description: "Well situated storefront, suitable for retail, art exhibition etc.",
-  address: "Genslerstraße 10 Berlin Tegel",
+  address: "Marienburger Str. 16, 10405 Berlin",
   internet: true,
   availability_status: true,
   heating: true,
   lighting: true,
-  user: user1
+  user: user_berlin1
 )
 
-space14 = Space.create!(
+berlin_space5 = Space.create!(
   title: 'Large space in former industrial site',
   floor_space: 6,
   price_per_day: 29,
   description: "Gritty, spacious space in trendy Neukölln. Perfect for events, parties, or exhibitions",
-  address: "Genslerstraße 84 Berlin Wannsee",
+  address: "Prenzlauer Allee 22, 10405 Berlin",
   internet: true,
   availability_status: true,
   heating: false,
   lighting: true,
-  user: user2
+  user: user_berlin2
 )
 
-space15 = Space.create!(
+berlin_space6 = Space.create!(
   title: 'Small shop on busy street in Mitte',
   floor_space: 10,
   price_per_day: 40,
-  description: "Currently inbetween tenants, this store is suitable for pop-ups ",
-  address: "Landhausstraße 97 Schwedt, Mitte",
+  description: "Currently inbetween tenants, this store is suitable for pop-ups",
+  address: "Neustädtische Kirchstraße 14-23, 10117 Berlin",
   internet: true,
   availability_status: false,
   heating: true,
   lighting: true,
-  user: user3
+  user: user_berlin2
 )
 
-space16 = Space.create!(
-  title: 'Charming space in Potsdam',
+berlin_space7 = Space.create!(
+  title: 'Charming space in central Berlin',
   floor_space: 12,
   price_per_day: 17,
-  description: "Previously a bakery, this space has plenty of character ",
-  address: "Fugger Strasse 80 Potsdam, Brandenburg",
+  description: "Previously a bakery, this space has plenty of character",
+  address: "Dorotheenstraße 89-90, 10117 Berlin",
   internet: true,
   availability_status: true,
   heating: true,
   lighting: true,
-  user: user4
+  user: user_berlin2
 )
 
-space17 = Space.create!(
-  title: 'Great retail outdoor space in Brandenburg courtyard',
+berlin_space8 = Space.create!(
+  title: 'Great retail outdoor space in Berlin',
   floor_space: 40,
   price_per_day: 46,
   description: "Fromer retail space in quiet courtyard, with ample outdoor space available for events/pop-ups",
-  address: "Landhausstraße 46 Woltersdorf, Brandenburg",
+  address: "Stauffenbergstraße 4-6, 10785 Berlin",
   internet: true,
   availability_status: true,
   heating: false,
   lighting: true,
-  user: user5
+  user: user_berlin2
 )
 
-space18 = Space.create!(
+berlin_space9 = Space.create!(
   title: 'Modern storefront in vibrant Mitte',
   floor_space: 47,
   price_per_day: 50,
-  description: "Skalitzer Str. 64 Kreuzberg, Berlin",
+  description: "Weinmeisterstrasse 13, Berlin, 10437 Berlin",
   address: "Located in upscale part of town, the space is perfect for retail pop-ups",
   internet: true,
   availability_status: false,
   heating: true,
   lighting: true,
-  user: user6
+  user: user_berlin3
 )
 
-space19 = Space.create!(
+berlin_space10 = Space.create!(
   title: 'Inviting storefront in charming Prenzlauer Berg',
   floor_space: 32,
   price_per_day: 24,
   description: "Well situated storefront, suitable for retail, art exhibition etc.",
-  address: "Eberswalder Str. 45 Prenzlauer Berg Berlin",
+  address: "Eberswalder Str. 33, 10437 Berlin",
   internet: true,
   availability_status: true,
   heating: true,
   lighting: true,
-  user: user7
+  user: user_berlin3
 )
 
-space20 = Space.create!(
+berlin_space11 = Space.create!(
   title: '1920s store front in vibrant neighbourhood',
   floor_space: 24,
   price_per_day: 27,
-  description: "Beautiful bookstore offing half of it's space to any",
-  address: "Skalitzer Str. 45 Kreuzberg, Berlin",
+  description: "Beautiful bookstore offing half of it's space to anyone wanting to show their work. Large window facing a busy streen in the trendy area of Berlin.",
+  address: "Skalitzer Str. 45, 10997 Berlin",
   internet: true,
   availability_status: true,
   heating: true,
   lighting: false,
-  user: user8
+  user: user_berlin3
 )
 
-space20 = Space.create!(
+berlin_space12 = Space.create!(
   title: 'Gritty formal industrial site in Lichtenberg',
   floor_space: 24,
   price_per_day: 27,
@@ -366,7 +366,7 @@ space20 = Space.create!(
   availability_status: true,
   heating: true,
   lighting: false,
-  user: user8
+  user: user_berlin3
 )
 
 puts "Created #{User.count} users and #{Space.count} spaces"
