@@ -1,8 +1,8 @@
+<div class="index-banner">
+</div>
 
-
-<div class="container mt-5">
+<div class="container mt-3">
   <div class="text-center">
-    <br>
     <h1><strong>All of the spaces near you</strong></h1>
     <br>
     <% if policy(Space).create? %>
@@ -13,12 +13,10 @@
 
 <br>
 
-  <div class="home-container">
-    <div class="content">
-
-      <div class="cards">
-
-        <% @spaces.each do |space| %>
+<div class="home-container">
+  <div class="content">
+    <div class="cards">
+      <% @spaces.each do |space| %>
         <div class="card-space">
           <div class="card-image">
             <% if space.photo.attached?  %>
@@ -29,19 +27,14 @@
           </div>
           <div class="card-space-info">
             <div>
-              <h2 class="card-trip-pricing"><strong>£<%= space.price_per_day %></strong>/day</h2>
-              <h2><%= link_to space.title, space_path(space) %></h2>
+              <h2 class="card-trip-pricing">$<%= space.price_per_day %><span>/day</span></h2>
+              <h2><%= link_to space.title, space_path(space), class: 'card-link' %></h2>
               <p><%= space.address %></p>
             </div>
           </div>
         </div>
-        <% end %>
-
-      </div>
-
-      <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoieWtvb2thYXNpIiwiYSI6ImNrZ3c5MW1neDA1bzAycnFjeXF6Z2NpNmsifQ.ZgvN0i2aOJW3PHqtqALUyA'>
-
+      <% end %>
     </div>
+    <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoieWtvb2thYXNpIiwiYSI6ImNrZ3c5MW1neDA1bzAycnFjeXF6Z2NpNmsifQ.ZgvN0i2aOJW3PHqtqALUyA'>
   </div>
-
-
+</div>
