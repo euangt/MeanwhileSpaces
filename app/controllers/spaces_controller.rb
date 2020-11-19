@@ -4,6 +4,22 @@ class SpacesController < ApplicationController
 
   def index
     @spaces = policy_scope(Space)
+      if params[:query].present?
+        @spaces = Space.near(params[:query], 50)
+      else
+      @spaces = Space.all
+      end
+
+      # if params[:query]
+      # then @spaces = Space.near(params[:query], 50)
+
+    @markers = @spaces.geocoded.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { space: space })
+      }
+    end
   end
 
   def show
@@ -16,7 +32,7 @@ class SpacesController < ApplicationController
     @space = Space.new
     authorize @space
   end
-  
+
   def create
     @space = Space.new(space_params)
     @space.user = current_user
