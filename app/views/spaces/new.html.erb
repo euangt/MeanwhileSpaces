@@ -5,8 +5,15 @@
     <%= f.input :title %>
     <%= f.input :address %>
     <%= f.input :price_per_day %>
+    <%= f.input :description %>
+    <%= f.input :floor_space %>
+    <%= f.input :heating, inline_label: 'Heating' %>
+    <%= f.input :internet, inline_label: 'Internet' %>
+    <%= f.input :lighting, inline_label: 'Lighting' %>
+    <%= f.input :availability_status, inline_label: 'Is this available?' %>
+    <%= f.input :photo, as: :file %>
    </div>
-   <div class="form-actions"> 
+   <div class="form-actions mb-2"> 
     <%= f.button :submit, class: "btn btn-primary"%>
    </div>
 <% end %>
