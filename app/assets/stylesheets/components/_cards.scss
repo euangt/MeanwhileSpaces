@@ -57,15 +57,21 @@
   right: 24px;
   color: #373F51;
   background: #FFFCFA;
-  width: 320px;
+  width: 360px;
   height: 360px;
   padding: 24px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(55, 63, 81,0.12);
 }
 
-.card-image {
-
+.card-upload > img {
+  border: 1px solid rgba(55, 63, 81,0.12);
+  color: #373F51;
+  background: #FFFCFA;
+  width: 60%;
+  height: 40vh;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(55, 63, 81,0.12);
 }
 
 // media sizing
