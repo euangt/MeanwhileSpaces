@@ -1,21 +1,13 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = policy_scope(Booking) # Make sure that .booking is correct/ .bookings?
-    @incoming_bookings = []
-    @outgoing_bookings = []
-    @irrelevant_bookings = []
-    @bookings.each do |booking|
+    @my_bookings = policy_scope(Booking) # Make sure that .booking is correct/ .bookings?
+    @my_space_bookings = Booking.all.map do |booking|
+      if booking.space.user == current_user
+      end
+    end
       # if your the owner of space that is booked => incoming
       # elsif you book a space that user is not owner of=> outgoing
       # else nevermind
-      if booking.space.user == current_user
-        @incoming_bookings << booking
-      elsif booking.user == current_user
-        @outgoing_bookings << booking
-      else
-        @irrelevant_bookings << booking
-      end
-    end
   end
 
   def create
