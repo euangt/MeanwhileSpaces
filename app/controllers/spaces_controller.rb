@@ -10,9 +10,6 @@ class SpacesController < ApplicationController
       @spaces = Space.all
       end
 
-      # if params[:query]
-      # then @spaces = Space.near(params[:query], 50)
-
     @markers = @spaces.geocoded.map do |space|
       {
         lat: space.latitude,
@@ -26,6 +23,15 @@ class SpacesController < ApplicationController
     authorize @space
     @user = current_user
     @booking = Booking.new
+    @spaces = []
+    @spaces << @space
+    @markers = @spaces.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { space: space })
+      }
+    end
   end
 
   def new
