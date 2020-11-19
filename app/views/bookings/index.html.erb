@@ -1,22 +1,15 @@
-<div class="container mt-4">
-  <div class="row justify-content-center">
-    <div class="col-sm-10 col-6">
-      <h1>bookings of current user</h1>
-      <div class="container">
-        <div class="row justify-content-center">
-          <% @bookings.each do |booking| %>
-          <div class="col-8">
-            <p>Name: <%= booking.space.title %></p>
-            <p>Address: <%= booking.space.address %><p>
-            <p>Price: £<%= booking.space.price_per_day %><p>
-            <p>Dates: <%= booking.start_date %> - <%= booking.end_date %></p>
-            <p>Total Cost: £<%= (booking.end_date - booking.start_date).to_i * booking.space.price_per_day %></p>
-          </div>
-          <% end %>
-        </div>
-        <div class="col-4">
-          <h2>Map goes here</h2>
-        </div>
+<div class="container">
+  <h1>bookings of current user</h1>
+  <div class="container">
+    <div class="row justify-content-center">
+      <% @bookings.each do |booking| %>
+      <div class="col-8">
+        <p>Name: <%= booking.space.title %></p>
+        <p><%=booking.space.availability_status %></p>
+        <p>Address: <%= booking.space.address %><p>
+        <p>Price: £<%= booking.space.price_per_day %><p>
+        <p>Dates: <%= booking.start_date %> - <%= booking.end_date %></p>
+        <p>Total Cost: £<%= (booking.end_date - booking.start_date).to_i * booking.space.price_per_day %></p>
       </div>
     </div>
   </div>
