@@ -1,18 +1,22 @@
-<div class="container mt-4">
+<div class="container mt-3">
   <div class="space-banner"></div>
-  <div><%= link_to "< Back", spaces_path %></div>
-  <h1><%= @space.title %></h1>
-  <p><em><%= @space.address %></em></p>
+  <div class="space-header">
+    <div><%= link_to "< Back", spaces_path %></div>
+    <h1><%= @space.title %></h1>
+    <p><em><%= @space.address %></em></p>
+  </div>
   <div class="row">
     <div class="col-8">
       <div class="row">
         <div class="col-6">
-          <p><%= @space.description %></p>
-          <p>Price: £<%= @space.price_per_day %></p>
-          <% if policy(@space).edit? %>
-          <p><%= link_to "Update info", edit_space_path(@space), class: "btn btn-ghost" %></p>
-          <% end %>
-          <br><br>
+          <div class="space-description">
+            <p><%= @space.description %></p>
+            <p>Price: £<%= @space.price_per_day %></p>
+            <% if policy(@space).edit? %>
+            <p><%= link_to "Update info", edit_space_path(@space), class: "btn btn-ghost" %></p>
+            <% end %>
+            <br><br>
+          </div>
         </div>
         <div class="col-4">
           <p>Floor space: <%= @space.floor_space %>sqm</p>
@@ -65,10 +69,12 @@
     </div>
   </div>
   <br>
+  <div class="remove-button">
     <% if policy(@space).destroy? %>
     <p><%= link_to "Remove this space", space_path(@space), method: :delete, data: {confirm: 'Are you sure you want to renove this space?'}, class: "btn btn-ghost"  %></p>
     <% end %>
-  <div><%= link_to "< Back", spaces_path, class: "btn btn-flat" %></div>
+  </div>
+  <div class="back-button"><%= link_to "< Back", spaces_path, class: "btn btn-flat" %></div>
 </div>
 
 
