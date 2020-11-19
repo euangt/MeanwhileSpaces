@@ -1,10 +1,24 @@
 <div class="index-banner" style="background-image: linear-gradient(rgba(55, 63, 81,0.4),rgba(55, 63, 81,0.3)), url('https://res.cloudinary.com/tayloreaw/image/upload/v1605803279/m8oz8rruua4nsa7ahdw9.jpg');">
+  <div class="row justify-content-center">
+    <div class="col-sm-6 col-md-5">
+      <%= form_tag spaces_path, method: :get do %>
+        <div class="search-form-control form-group">
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search other locations"
+            %>
+            <%= submit_tag "Search", class: "btn btn-flat" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<div class="container mt-3">
+<div class="container mt-5">
   <div class="text-center">
     <h1><strong>All of the spaces near you</strong></h1>
-    <br>
+    <p>-----------------------------------------</p>
     <% if policy(Space).create? %>
       <%= link_to "Share your own space!", new_space_path, class: 'btn btn-ghost' %>
     <% end %>
@@ -27,22 +41,20 @@
           </div>
           <div class="card-space-info">
             <div>
-              <h2 class="card-trip-pricing">$<%= space.price_per_day %><span>/day</span></h2>
+              <h2 class="card-space-pricing">$<%= space.price_per_day %><span>/day</span></h2>
               <h2><%= link_to space.title, space_path(space), class: 'card-link' %></h2>
               <p><%= space.address %></p>
+              <p>-------------------</p>
             </div>
           </div>
         </div>
       <% end %>
     </div>
-
-  <div id="map"
-    style="width: 100%; height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
+    <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-    <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoieWtvb2thYXNpIiwiYSI6ImNrZ3c5MW1neDA1bzAycnFjeXF6Z2NpNmsifQ.ZgvN0i2aOJW3PHqtqALUyA'>
   </div>
 </div>
+<br><br>
