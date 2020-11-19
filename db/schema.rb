@@ -80,22 +80,6 @@ ActiveRecord::Schema.define(version: 2020_11_18_110314) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "windows", force: :cascade do |t|
-    t.string "title"
-    t.integer "floor_space"
-    t.integer "price_per_day"
-    t.text "description"
-    t.text "address"
-    t.integer "longitude"
-    t.integer "latitude"
-    t.boolean "internet"
-    t.boolean "availability_status"
-    t.boolean "heating"
-    t.boolean "lighting"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "spaces"
   add_foreign_key "bookings", "users"

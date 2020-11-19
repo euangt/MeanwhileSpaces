@@ -1,18 +1,31 @@
 class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking) # Make sure that .booking is correct/ .bookings?
+    #@space = Space.where(user_id == current_user)
   end
 
   def create
     @booking = Booking.new(bookings_params)
+    @space = Space.find(params[:space_id])
     @booking.user = current_user
-    @booking.space = Space.find(params[:space_id])
+    @booking.space = @space
     authorize @booking
-    if @booking.save
-      redirect_to space_bookings_path
+    if @booking.space.availability_status == true
+      @booking.space.availability_status = false
+      @booking.space.save!
+      if @booking.save!
+        redirect_to space_bookings_path(current_user)
+      else
+        render "space/show"
+      end
+      # raise
     else
-      render "space/show"
+      flash[:notice] = "Space is already occupied"
     end
+  end
+
+  def show
+    @bookings = policy_scope(Booking)
   end
 
   # def destroy
