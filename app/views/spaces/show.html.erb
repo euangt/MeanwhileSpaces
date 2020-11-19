@@ -26,6 +26,7 @@
         </div>
       </div>
     </div>
+    <% if @user_id == @space.user_id %>
     <div class="col-4">
       <div class="card-book">
           <h2 class="text-center">Book this Space</h2>
@@ -41,6 +42,7 @@
               </div>
             <% end %>
           <% end %>
+        <% end %>
       </div>
     </div>
   </div>
