@@ -1,20 +1,31 @@
-<div class="container">
-<h1>Add a Space</h1>
-<%= simple_form_for @space do |f| %>
-   <div class="form-inputs"> 
-    <%= f.input :title %>
-    <%= f.input :address %>
-    <%= f.input :price_per_day %>
-    <%= f.input :description %>
-    <%= f.input :floor_space %>
-    <%= f.input :heating, inline_label: 'Heating' %>
-    <%= f.input :internet, inline_label: 'Internet' %>
-    <%= f.input :lighting, inline_label: 'Lighting' %>
-    <%= f.input :availability_status, inline_label: 'Is this available?' %>
-    <%= f.input :photo, as: :file %>
-   </div>
-   <div class="form-actions mb-2"> 
-    <%= f.button :submit, class: "btn btn-primary"%>
-   </div>
-<% end %>
+<div class="new-banner" style="background-image: linear-gradient(rgba(55, 63, 81,0.4),rgba(55, 63, 81,0.3)), url('https://res.cloudinary.com/tayloreaw/image/upload/v1605799975/l59em1dyinero1fhdfvh.jpg');">
+
+  <div class="container">
+    <h1>Add a space</h1>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <%= simple_form_for @space do |f| %>
+         <div class="form-inputs">
+          <%= f.input :title %>
+          <%= f.input :address %>
+          <%= f.input :price_per_day %>
+          <%= f.input :description %>
+          <%= f.input :floor_space %>
+          <%= f.input :heating, inline_label: 'Heating' %>
+          <%= f.input :internet, inline_label: 'Internet' %>
+          <%= f.input :lighting, inline_label: 'Lighting' %>
+          <%= f.input :availability_status, inline_label: 'Is this available?' %>
+          <%= f.input :photo, as: :file %>
+         </div>
+         <div class="form-actions mb-2">
+          <%= f.button :submit, class: "btn btn-flat"%>
+         </div>
+      <% end %>
+      <br><br>
+    </div>
+  </div>
 </div>

@@ -10,11 +10,9 @@
         <p>Price: £<%= booking.space.price_per_day %><p>
         <p>Dates: <%= booking.start_date %> - <%= booking.end_date %></p>
         <p>Total Cost: £<%= (booking.end_date - booking.start_date).to_i * booking.space.price_per_day %></p>
-      </div>
       <% end %>
-    </div>
-    <div class="col-4">
-      <h2>Map goes here</h2>
+      </div>
     </div>
   </div>
 </div>
+
