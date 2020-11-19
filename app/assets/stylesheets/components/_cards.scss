@@ -1,14 +1,4 @@
-.content {
-  display: flex;
-}
-
-#map {
-  display: block;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
-
+// index page
 .cards {
   flex-grow: 1;
   display: grid;
@@ -17,83 +7,88 @@
   padding: 0px 12px 0 12px;
 }
 
-@media(max-width: 1000px)  {
+.card-space {
+  background: transparent;
+
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(55, 63, 81,0.1);
+  }
+
+  .card-trip-pricing {
+    font-size: 20px;
+    padding-bottom: 4px;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+
+  .card-space-info {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+  }
+}
+
+
+// show page //
+
+.card-book {
+  display: block;
+  position: absolute;
+  border: 1px solid rgba(55, 63, 81,0.12);
+  top: -88px;
+  right: 24px;
+  color: #373F51;
+  background: #FFFCFA;
+  width: 320px;
+  height: 360px;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(55, 63, 81,0.12);
+}
+
+.card-image {
+
+}
+
+// media sizing
+
+@media(max-width: 1200px)  {
   .cards {
     grid-template-columns: 1fr 1fr;
     }
-    #map {
-      display: block;
+    .card-book {
+      top: -0px;
     }
 }
 
-@media(max-width: 800px)  {
+@media(max-width: 950px)  {
   .cards {
-    grid-template-columns: 1fr 1fr;
-    }
-    #map {
-      display: block;
-    }
+    grid-template-columns: 1fr;
+  }
 }
 
-
-@media(max-width: 768px) {
-  .cards {
-   grid-template-columns: 1fr 1fr;
- }
-  #map {
-   display: none;
- }
-}
 
 @media(max-width: 500px) {
   .cards {
    grid-template-columns: 1fr;
  }
-  #map {
-   display: none;
- }
-}
-
-
-
-.card-space {
-  overflow: hidden;
-  background: white;
-  background: transparent;
-}
-
-.card-space img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  overflow: hidden;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-.card-space .card-trip-pricing {
-  font-size: 20px;
-  padding-bottom: 4px;
-}
-
-.card-space h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-space p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-.card-space .card-space-info {
-  padding: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
 }
 
