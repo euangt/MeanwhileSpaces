@@ -1,28 +1,40 @@
-<div class="space-banner">
-  <div class="container">
-  </div>
-</div>
-
 <div class="container mt-3">
-  <%= link_to "< Back", spaces_path %>
-  <h1><%= @space.title %></h1>
-  <p><em><%= @space.address %></em></p>
-
+  <div class="space-banner"></div>
+  <div class="space-header">
+    <div><%= link_to "< Back", spaces_path %></div>
+    <h1><%= @space.title %></h1>
+    <p><em><%= @space.address %></em></p>
+  </div>
   <div class="row">
     <div class="col-8">
       <div class="row">
         <div class="col-6">
-          <p><%= @space.description %></p>
-          <p>Available for rent: <%= @space.availability_status %></p>
-          <p>Price: £<%= @space.price_per_day %></p>
-          <br><br>
+          <div class="space-description">
+            <p><%= @space.description %></p>
+            <p>Price: £<%= @space.price_per_day %></p>
+            <% if policy(@space).edit? %>
+            <p><%= link_to "Update info", edit_space_path(@space), class: "btn btn-ghost" %></p>
+            <% end %>
+            <br><br>
+          </div>
         </div>
         <div class="col-4">
           <p>Floor space: <%= @space.floor_space %>sqm</p>
-          <p>Internet: <%= @space.internet %></p>
-          <p>Heating: <%= @space.heating %></p>
-          <p>Lighting: <%= @space.lighting %></p>
-          <br><br>
+          <% if @space.internet?  %>
+            <div class="icon-show"><i class="far fa-check-circle"></i><span> Internet</span></div>
+          <% else %>
+            <div class="icon-show"><i class="far fa-circle"></i><span> Internet</span></div>
+          <% end %>
+          <% if @space.heating?  %>
+            <div class="icon-show"><i class="far fa-check-circle"></i><span> Heating</span></div>
+          <% else %>
+            <div class="icon-show"><i class="far fa-circle"></i><span>Heating</span></div>
+          <% end %>
+          <% if @space.lighting?  %>
+            <div class="icon-show"><i class="far fa-check-circle"></i><span> Lighting</span></div>
+          <% else %>
+            <div class="icon-show"><i class="far fa-circle"></i><span> Lighting</span></div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -49,7 +61,7 @@
 
   <div class="row">
     <div class="col-sm-10 col-6">
-      <div class="card-image">
+      <div class="card-upload">
         <% if @space.photo.attached?  %>
           <%= cl_image_tag @space.photo.key, width: 560, height: 360, crop: :fill %>
         <% else %>
@@ -58,18 +70,15 @@
       </div>
     </div>
   </div>
-
+  <br>
+  <div class="remove-button">
+    <% if policy(@space).destroy? %>
+    <p><%= link_to "Remove this space", space_path(@space), method: :delete, data: {confirm: 'Are you sure you want to renove this space?'}, class: "btn btn-ghost"  %></p>
+    <% end %>
+  </div>
+  <div class="back-button"><%= link_to "< Back", spaces_path, class: "btn btn-flat" %></div>
 </div>
 
-  <% if policy(@space).edit? %>
-    <%= link_to "Update", edit_space_path(@space) %>
-  <% end %>
 
-  <% if policy(@space).destroy? %>
-    <%= link_to "Remove this space", space_path(@space), method: :delete, data: {confirm: 'Are you sure you want to renove this space?'}  %>
-  <% end %>
 
-  <div>
-    <h2>Map goes here</h2>
-  </div>
-  <br><br>
+<br><br>
