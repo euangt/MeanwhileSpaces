@@ -8,6 +8,7 @@ class SpacesController < ApplicationController
 
   def show
     authorize @space
+    @user = current_user
     @booking = Booking.new
   end
 
