@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
       end
       # raise
     else
-      flash[:notice] = "Space is already occupied"
+      flash[:notice, remote: true] = "Space is already occupied"
     end
   end
 
