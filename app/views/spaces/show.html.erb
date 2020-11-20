@@ -1,9 +1,17 @@
 <div class="container mt-3">
   <% if @space.photo.attached? %>
-    <div class="space-banner" style="background-image: linear-gradient(rgba(55, 63, 81,0.4),rgba(55, 63, 81,0.3)), url('<%= cl_image_tag @space.photo.key %>');">
+    <div
+      class="space-banner"
+      id=“card-book-form”
+      style="background-image: linear-gradient(rgba(55, 63, 81,0.4),rgba(55, 63, 81,0.3)),
+      url('<%= cl_image_path @space.photo.key %>');">
     </div>
   <% else %>
-    <div class="space-banner" style="background-image: linear-gradient(rgba(55, 63, 81,0.4),rgba(55, 63, 81,0.3)), url(https://res.cloudinary.com/tayloreaw/image/upload/v1605799990/xgimxvzie7c1gsl24xjm.jpg);">
+    <div
+      class="space-banner"
+      id=“card-book-form”
+      style="background-image: linear-gradient(rgba(55, 63, 81,0.4),rgba(55, 63, 81,0.3)),
+      url('https://res.cloudinary.com/tayloreaw/image/upload/v1605799990/xgimxvzie7c1gsl24xjm.jpg');">
     </div>
   <% end %>
   <div class="space-header">
@@ -38,7 +46,7 @@
           <% if @space.heating?  %>
             <div class="icon-show"><i class="far fa-check-circle"></i><span> Heating</span></div>
           <% else %>
-            <div class="icon-show"><i class="far fa-circle"></i><span>Heating</span></div>
+            <div class="icon-show"><i class="far fa-circle"></i><span> Heating</span></div>
           <% end %>
           <% if @space.lighting?  %>
             <div class="icon-show"><i class="far fa-check-circle"></i><span> Lighting</span></div>
@@ -74,7 +82,7 @@
     <div class="col-sm-10 col-6">
       <div class="card-upload">
         <% if @space.photo.attached?  %>
-          <%= cl_image_tag @space.photo.key, height: 560, crop: :crop %>
+          <%= cl_image_tag @space.photo.key, height: 560 %>
         <% else %>
           <img src="https://source.unsplash.com/random/?stores" class=""  height="560" alt="">
         <% end %>
@@ -86,7 +94,7 @@
     <div class="col-12">
       <div class="card-map">
         <div id="map"
-             style="width: 100%; height: 240px;"
+             style="width: 100%; height: 280px;"
              data-markers="<%= @markers.to_json %>"
              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
