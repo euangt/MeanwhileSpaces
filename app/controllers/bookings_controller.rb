@@ -24,9 +24,9 @@ class BookingsController < ApplicationController
       else
         render "space/show"
       end
-      # raise
     else
       flash[:notice] = "Space is already occupied"
+      redirect_to space_path(current_user)
     end
   end
 
