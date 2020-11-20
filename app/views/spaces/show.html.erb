@@ -10,7 +10,7 @@
     <div><%= link_to "< Back", spaces_path %></div>
     <h1><%= @space.title %></h1>
     <p><em><%= @space.address %></em></p>
-    <p>--------------------</p>
+<!--     <p>--------------------</p> -->
   </div>
   <div class="row">
     <div class="col-8">
@@ -18,7 +18,7 @@
         <div class="col-6">
           <div class="space-description">
             <p><%= @space.description %></p>
-            <h2>$<%= @space.price_per_day %></h2>
+            <h2>$<%= @space.price_per_day %> per day</h2>
             <br>
             <% if policy(@space).edit? %>
               <p><%= link_to "Update info", edit_space_path(@space), class: "btn btn-ghost" %></p>
@@ -38,7 +38,7 @@
           <% if @space.heating?  %>
             <div class="icon-show"><i class="far fa-check-circle"></i><span> Heating</span></div>
           <% else %>
-            <div class="icon-show"><i class="far fa-circle"></i><span>Heating</span></div>
+            <div class="icon-show"><i class="far fa-circle"></i><span> Heating</span></div>
           <% end %>
           <% if @space.lighting?  %>
             <div class="icon-show"><i class="far fa-check-circle"></i><span> Lighting</span></div>
