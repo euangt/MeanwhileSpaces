@@ -38,7 +38,7 @@
         <% @my_bookings.each do |booking| %>
           <div class="booking_card">
             <% if booking.space.photo.attached?  %>
-            <%= cl_image_tag space.photo.key%>
+            <%= cl_image_tag booking.space.photo.key%>
           <% else %>
             <img src="https://source.unsplash.com/random/?stores">
           <% end %>
