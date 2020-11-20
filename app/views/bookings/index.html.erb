@@ -11,26 +11,33 @@
     <% end %>
   </div>
   
-  <div class="container mt-3">
   <div class="col-4" id="user_bookings">
     <h1>Your bookings</h1>
-      <% @my_bookings.each do |booking| %>
-        <p><%= booking.space.title %></p>
-        <p><%= booking.space.address %></p>
-        <p><%= booking.space.description %></p>
-        <p><%= booking.space.price_per_day %></p>
-    <% end %>
+      <% if !@my_bookings.empty? %>
+        <% @my_bookings.each do |booking| %>
+          <p><%= booking.space.title %></p>
+          <p><%= booking.space.address %></p>
+          <p><%= booking.space.description %></p>
+          <p><%= booking.space.price_per_day %></p>
+        <% end %>
+      <% else %>
+        <p>Why not explore some <%= link_to "new spaces?", spaces_path %></p>
+      <% end %>
   </div>
 
   <div class="col-4" id= "space_bookings">
     <h1>Your spaces rented out</h1>
-    <% @my_space_bookings.each do |booking| %>
-      <% if !booking.nil? %>
-      <p><%= booking.space.title %></p>
-      <p><%= booking.space.address %></p>
-      <p><%= booking.space.description %></p>
-      <p><%= booking.space.price_per_day %></p>
+    <% if !@my_space_bookings.empty? %>
+      <% @my_space_bookings.each do |booking| %>
+        <% if !booking.nil? %>
+        <p><%= booking.space.title %></p>
+        <p><%= booking.space.address %></p>
+        <p><%= booking.space.description %></p>
+        <p><%= booking.space.price_per_day %></p>
+        <% end %>
       <% end %>
+    <% else %>
+      <p>Your spaces have not been booked yet</p>
     <% end %>
   </div>
 </div>
