@@ -25,12 +25,8 @@ class BookingsController < ApplicationController
         render "space/show"
       end
     else
-<<<<<<< HEAD
-      flash[:notice, remote: true] = "Space is already occupied"
-=======
       flash[:notice] = "Space is already occupied"
-      redirect_to space_path(current_user)
->>>>>>> 31eadd6f5fdb69f8b04fe25fea1acf7f2e686486
+      redirect_to space_path(current_user, anchor: "card-book-form")
     end
   end
 
