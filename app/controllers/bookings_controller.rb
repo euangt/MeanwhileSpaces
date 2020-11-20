@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
       end
     else
       flash[:notice] = "Space is already occupied"
-      redirect_to space_path(current_user)
+      redirect_to space_path(current_user, anchor: "card-book-form")
     end
   end
 
