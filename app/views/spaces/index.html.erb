@@ -18,7 +18,6 @@
 <div class="container mt-5">
   <div class="text-center">
     <h1><strong>All of the spaces near you</strong></h1>
-    <p>-----------------------------------------</p>
     <% if policy(Space).create? %>
       <%= link_to "Share your own space!", new_space_path, class: 'btn btn-ghost' %>
     <% end %>
@@ -44,14 +43,14 @@
               <h2 class="card-space-pricing">$<%= space.price_per_day %><span>/day</span></h2>
               <h2><%= link_to space.title, space_path(space), class: 'card-link' %></h2>
               <p><%= space.address %></p>
-              <p>-------------------</p>
+           <!--    <p>-------------------</p> -->
             </div>
           </div>
         </div>
       <% end %>
     </div>
     <div id="map"
-      style="width: 200%; height: 600px;"
+      style="width: 200%; height: 90vh;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>

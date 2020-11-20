@@ -29,3 +29,13 @@
 .scrolled-up{
    transform:translateY(0); transition: all 0.3s ease-in-out;
 }
+
+.nav-item {
+  font-family: "Poppins", "Open Sans", "Helvetica", "sans-serif";
+  font-weight: lighter;
+}
+
+.navbar-brand {
+  font-family: "Poppins", "Open Sans", "Helvetica", "sans-serif";
+  font-weight: 300;
+}
