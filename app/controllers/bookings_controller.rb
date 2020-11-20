@@ -20,13 +20,13 @@ class BookingsController < ApplicationController
       @booking.space.availability_status = false
       @booking.space.save!
       if @booking.save!
-        redirect_to space_bookings_path(current_user)
+        redirect_to space_bookings_path(@space)
       else
         render "space/show"
       end
     else
       flash[:notice] = "Space is already occupied"
-      redirect_to space_path(current_user, anchor: "card-book-form")
+      redirect_to space_path(@space, anchor: "card-book-form")
     end
   end
 
