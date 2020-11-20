@@ -1,51 +1,86 @@
-<div class="container mt-3">
-  <div class="col-4">
-    <h1>Your Spaces</h1>
+  <div class="container mt-5">
+    <h1 id="your_spaces">Your Spaces</h1>
+  </div>
+  <div class="all_booking_cards d-flex justify-content-center">
+    <div>
       <% if !current_user.spaces.empty? %>
         <% current_user.spaces.each do |space| %>
-          <p><%= space.title %></p>
-          <p><%= space.address %></p>
-          <p><%= space.description %></p>
-          <p><%= space.price_per_day %></p>
-          <%= link_to "View your space", space_path(space)  %>
-          <%= link_to "Update this space?", edit_space_path(space)  %>
-        <% end %>
+         <div class="booking_card">
+          <% if space.photo.attached?  %>
+            <%= cl_image_tag space.photo.key%>
+          <% else %>
+            <img src="https://source.unsplash.com/random/?stores">
+          <% end %>
+            <div class ="booking_card_info">
+              <h3><%= link_to space.title, space_path(space) %></h3>
+              <p><%= space.address %></p>
+              <p><%= space.description %></p>
+              <p>$<%= space.price_per_day %> per day</p>
+<!--               <%= link_to "View your space", space_path(space)  %>
+ -->              <%= link_to "Update your space?", edit_space_path(space)  %>
+            </div>
+          </div>
+          <% end %>
       <% else %>
         <p>Why not <%= link_to "share your space?", new_space_path %></p>
       <% end %>
+    </div>
   </div>
-  
-  <div class="col-4" id="user_bookings">
+
+
+
+  <div class="container mt-5">
     <h1>Your bookings</h1>
+  </div>
+  <div class="all_booking_cards d-flex justify-content-center">
+    <div>
       <% if !@my_bookings.empty? %>
         <% @my_bookings.each do |booking| %>
-          <p><%= booking.space.title %></p>
-          <p><%= booking.space.address %></p>
-          <p><%= booking.space.description %></p>
-          <p><%= booking.space.price_per_day %></p>
+          <div class="booking_card">
+            <% if booking.space.photo.attached?  %>
+            <%= cl_image_tag space.photo.key%>
+          <% else %>
+            <img src="https://source.unsplash.com/random/?stores">
+          <% end %>
+              <div class ="booking_card_info">
+                <h3><%= link_to booking.space.title, space_path(booking.space) %></h3>
+                <p><%= booking.space.address %></p>
+                <p><%= booking.space.description %></p>
+                <p>$<%= booking.space.price_per_day %> per day</p>
+              </div>
+          </div>
         <% end %>
       <% else %>
-        <p>Why not explore some <%= link_to "new spaces?", spaces_path %></p>
+        <div class="container mt-5 mb-5">
+          <p>Why not explore some <%= link_to "new spaces?", spaces_path %></p>
+        </div>
       <% end %>
+    </div>
   </div>
 
 
   <% if !current_user.spaces.empty? %>
-  <div class="col-4" id= "space_bookings">
-    <h1>Your spaces rented out</h1>
+    <div class="container mt-5 mb-5">
+      <h1>Your spaces rented out</h1>
+    </div>
+    <div class="all_booking_cards d-flex justify-content-center">
+    <div>
       <% if !@my_space_bookings.empty? %>
         <% @my_space_bookings.each do |booking| %>
           <% if !booking.nil? %>
-            <p><%= booking.space.title %></p>
+        <div class="booking_card">
+            <h3><%= booking.space.title %></h3>
             <p><%= booking.space.address %></p>
             <p><%= booking.space.description %></p>
-            <p><%= booking.space.price_per_day %></p>
+            <p>$<%= booking.space.price_per_day %>per day</p>
+        </div>
           <% end %>
         <% end %>
-      <% else %>
-        <p>Your spaces have not been booked yet</p>
-      <% end %>
-    </div>
+        <% else %>
+            <p>Your spaces have not been booked yet</p>
+        <% end %>
+  </div>
+  </div>
   <% end %>
-</div>
+
 

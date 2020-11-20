@@ -26,6 +26,15 @@ class SpacesController < ApplicationController
     authorize @space
     @user = current_user
     @booking = Booking.new
+    @spaces = []
+    @spaces << @space
+    @markers = @spaces.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { space: space })
+      }
+    end
   end
 
   def new
@@ -67,7 +76,7 @@ class SpacesController < ApplicationController
   end
 
   def space_params
-    params.require(:space).permit(:space_id, :title, :address, :price_per_day, :heating, :internet, :lighting, :floor_space, :user_id, :photo)
+    params.require(:space).permit(:space_id, :title, :address, :price_per_day, :heating, :internet, :lighting, :floor_space, :user_id, :photo, :description)
   end
 end
 
