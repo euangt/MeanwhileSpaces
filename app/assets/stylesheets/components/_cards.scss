@@ -20,6 +20,10 @@
     box-shadow: 0 0 15px rgba(55, 63, 81,0.1);
   }
 
+  img:hover {
+    color: linear-gradient(rgba(55, 63, 81,0.4), rgba(55, 63, 81,0.2));
+  }
+
   .card-trip-pricing {
     font-size: 20px;
     padding-bottom: 4px;
@@ -29,6 +33,10 @@
     font-size: 16px;
     font-weight: bold;
     margin: 0;
+
+    span {
+      font-size: 12px;
+    }
   }
 
   p {
