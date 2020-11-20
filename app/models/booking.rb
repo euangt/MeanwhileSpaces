@@ -7,10 +7,6 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :space
 
-  def period
-    start_date..end_date
-  end
-
   # private
 
   # def validate_other_booking_overlap
