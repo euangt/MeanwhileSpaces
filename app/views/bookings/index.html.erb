@@ -33,19 +33,19 @@
   <% if !current_user.spaces.empty? %>
   <div class="col-4" id= "space_bookings">
     <h1>Your spaces rented out</h1>
-    <% if !@my_space_bookings.empty? %>
-      <% @my_space_bookings.each do |booking| %>
-        <% if !booking.nil? %>
-        <p><%= booking.space.title %></p>
-        <p><%= booking.space.address %></p>
-        <p><%= booking.space.description %></p>
-        <p><%= booking.space.price_per_day %></p>
+      <% if !@my_space_bookings.empty? %>
+        <% @my_space_bookings.each do |booking| %>
+          <% if !booking.nil? %>
+            <p><%= booking.space.title %></p>
+            <p><%= booking.space.address %></p>
+            <p><%= booking.space.description %></p>
+            <p><%= booking.space.price_per_day %></p>
+          <% end %>
         <% end %>
+      <% else %>
+        <p>Your spaces have not been booked yet</p>
       <% end %>
-    <% else %>
-      <p>Your spaces have not been booked yet</p>
-    <% end %>
-  </div>
+    </div>
   <% end %>
 </div>
 
