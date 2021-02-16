@@ -18,7 +18,10 @@ Deployed and managed through Heroku
 ## Dream Team: 
 
 Yoko Kasai: @ykookaasi
+
 Ben Gordon: @bhgordon
+
 Lukas Horstmann: @LRG-H
+
 Euan Gillespie-Taylor: @euangt
 
